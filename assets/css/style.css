@@ -1,0 +1,37 @@
+/* Universal selector to set standards for the full page */
+* {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* stylized header element */
+header {
+  background-color: darkolivegreen; /* full background color */
+  color: beige; /* lighter font color to see against dark background */
+  padding: 20px; /* to have space around the text */
+  display: flex; /* flex so that it's responsive to all display sizes */
+  align-items: center; /* align so the items are on the same line */
+  justify-content: space-between; /* space-between to have the header on the left and nav links on the right */
+}
+
+/* h1 font sized to largest option so that it's the first thing you see */
+h1 {
+  font-size: xx-large;
+}
+
+/* for having the links in the nav be side-by-side and padded enough to be distinguishable from each other */
+ul li {
+  display: inline;
+  padding: 15px;
+}
+
+/* to make the links not have underlines, be the same color as h1, and a larger size than default */
+a {
+  text-decoration: none;
+  color: beige;
+  font-size: large;
+}
+
+/* for changing colors when hovering over the links in nav */
+a:hover {
+  color: wheat;
+}
