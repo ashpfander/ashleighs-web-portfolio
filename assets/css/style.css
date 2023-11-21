@@ -35,3 +35,12 @@ a {
 a:hover {
   color: wheat;
 }
+
+/* cover-image class for the main welcoming image */
+.cover-image {
+  background-image: url("../images/pfander-family.jpg"); /* background-image for a full width image */
+  background-size: cover; /* background-size set to cover so it scales to fit width */
+  background-position: center 35%; /* background-position to set position of image without having to resize/crop original image */
+  width: 100%; /* 100% width to fill page */
+  height: 670px; /* sets height of cover image to take up full page without scrolling */
+}
