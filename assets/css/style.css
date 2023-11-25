@@ -88,3 +88,37 @@ a:hover {
 p {
   line-height: 1.5rem; /* sets line spacing for better readability */
 }
+
+/* h3 stylizing */
+h3 {
+  font-size: large; /* the next size down from h2 */
+  margin-right: 25px; /* to create spacing from information on the right */
+}
+
+/* adding main footer stylizing that matches the header */
+footer {
+  background-color: darkolivegreen; /* same background color as header */
+  color: beige; /* same text color as header */
+  display: flex; /* to create flexbox for the whole footer area */
+  justify-content: center; /* centering the content within the footer flexbox */
+  padding: 20px; /* creating padding around the content area */
+}
+
+/* creating a specific class within the footer area */
+/* uses same info as .side-divider class, but updates the color within the footer only */
+footer .side-divider {
+  border-right: 1px solid beige; /* updates color to be beige inside the footer */
+  margin-right: 25px;
+}
+
+/* affects <p> elements only within the footer */
+footer p {
+  margin-right: 25px; /* creates spacing between each other */
+}
+
+/* only affects links within the footer */
+footer a {
+  text-decoration: none;
+  color: beige;
+  font-size: medium; /* same styling as header, but font size is smaller */
+}
