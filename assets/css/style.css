@@ -20,7 +20,7 @@ h1 {
 
 /* for having the links in the nav be side-by-side and padded enough to be distinguishable from each other */
 ul li {
-  display: inline;
+  display: inline-flex; /* updated inline display to flex for responsive design */
   padding: 15px;
 }
 
@@ -43,4 +43,48 @@ a:hover {
   background-position: center 35%; /* background-position to set position of image without having to resize/crop original image */
   width: 100%; /* 100% width to fill page */
   height: 670px; /* sets height of cover image to take up full page without scrolling */
+}
+
+/* container class to create a box for flexbox area */
+.container {
+  margin: 50px; /* create spacing around all edges for better look */
+  display: flex; /* display flex to create the flexbox */
+  flex-direction: row; /* row direction so flex items are inline */
+  flex-wrap: wrap; /* wrap so flex items will wrap when they exceed the space */
+}
+
+/*content class to style specific area within the container */
+.content {
+  display: flex; /* flex display so items within this area are also it's own flexbox */
+  width: 75%; /* 75% width so it doesn't take up the whole page */
+  justify-content: end; /* end justification so it's on the right side of the page */
+}
+
+/* section-header class to stylize the specific header */
+.section-header {
+  text-align: end; /* end alignment so text is aligned to the right */
+  width: 20%; /* 20% width so it only takes up part of the page and can be side-by-side with the content class */
+  color: darkolivegreen; /* changes the color of the text */
+  padding-right: 25px; /* creates padding on the right so it's not touching the content */
+  font-size: x-large; /* set to the next largest in sequence from h1 */
+}
+
+/* adds a border line between areas */
+.side-divider {
+  border-right: 1px solid lightslategrey; /* border-right so it's only on one side */
+  margin-right: 25px; /* margin so it's not up against the content on the right side */
+}
+
+/* img id for properties specific to one thing */
+#img-properties {
+  /* sets width and height of image */
+  width: 300px;
+  height: 300px;
+  border-radius: 200px; /* border-radius to make it be a circle shape */
+  margin-right: 25px; /* margin-right to give space between image and text next to it */
+}
+
+/* paragraph elements properties*/
+p {
+  line-height: 1.5rem; /* sets line spacing for better readability */
 }
