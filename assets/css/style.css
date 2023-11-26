@@ -25,13 +25,13 @@ ul li {
 }
 
 /* to make the links not have underlines, be the same color as h1, and a larger size than default */
-a {
+header a {
   text-decoration: none;
   color: beige;
   font-size: large;
 }
 
-/* for changing colors when hovering over the links in nav */
+/* for changing colors when hovering over the links */
 a:hover {
   color: wheat;
 }
@@ -49,21 +49,21 @@ a:hover {
 .container {
   margin: 50px; /* create spacing around all edges for better look */
   display: flex; /* display flex to create the flexbox */
-  flex-direction: row; /* row direction so flex items are inline */
-  flex-wrap: wrap; /* wrap so flex items will wrap when they exceed the space */
 }
 
 /*content class to style specific area within the container */
 .content {
   display: flex; /* flex display so items within this area are also it's own flexbox */
-  width: 75%; /* 75% width so it doesn't take up the whole page */
-  justify-content: end; /* end justification so it's on the right side of the page */
+  flex-wrap: wrap; /* flex wrap so items within the content class wrap to the next line when it gets too long */
+  flex-direction: row; /* row direction so flex items are inline */
+  flex: 75%; /* 75% width so it doesn't take up the whole page */
+  justify-content: start; /* start justification so information starts on the left side */
 }
 
 /* section-header class to stylize the specific header */
 .section-header {
   text-align: end; /* end alignment so text is aligned to the right */
-  width: 20%; /* 20% width so it only takes up part of the page and can be side-by-side with the content class */
+  flex: 20%; /* 20% width so it only takes up part of the page and can be side-by-side with the content class */
   color: darkolivegreen; /* changes the color of the text */
   padding-right: 25px; /* creates padding on the right so it's not touching the content */
   font-size: x-large; /* set to the next largest in sequence from h1 */
@@ -84,14 +84,67 @@ a:hover {
   margin-right: 25px; /* margin-right to give space between image and text next to it */
 }
 
-/* paragraph elements properties*/
-p {
+/* paragraph elements properties within content class */
+.content p {
   line-height: 1.5rem; /* sets line spacing for better readability */
+  flex: 65%;
 }
 
-/* h3 stylizing */
-h3 {
-  font-size: large; /* the next size down from h2 */
+/* this class is for the main image in the work section */
+.main-work-box {
+  display: flex;
+  position: relative; /* relative position so the text within can be positioned to this */
+  border: 4px solid darkolivegreen; /* added border to the image */
+  flex: 100%; /* 100% flex to fill full area */
+  margin-bottom: 10px; /* adds spacing between other images */
+}
+
+/* pseudo element to create the label for the first work image */
+.main-work-box::after {
+  content: "HORISEON ACCESSIBILITY RECODE"; /* what text I want it to show */
+  position: absolute; /* absolute position to have the label within the image */
+  bottom: 10px; /* bottom position for it to be at the bottom with some small spacing */
+  background-color: darkolivegreen;
+  color: beige;
+  font-size: large; /* the next sizing down from h2 */
+  font-weight: bold; /* give it a bold weight */
+  padding: 15px; /* some padding to have spacing around the text */
+}
+
+/* img properties within both work classes */
+.main-work-box img,
+.work-box img {
+  opacity: 0.5; /* to make the image(s) opacity 50% transparent */
+  width: 100%; /* fills the entire box area */
+}
+
+/* img properties within both work classes when hovered over */
+.main-work-box img:hover,
+.work-box img:hover {
+  opacity: 1; /* brings it back to the full opacity */
+}
+
+/* uses similar properties as .main-work-box, but half the flex area */
+.work-box {
+  display: flex;
+  position: relative; /* relative position so the text within can be positioned to this */
+  border: 4px solid darkolivegreen; /* added border to the image */
+  flex: 50%; /* 50% flex so there are two items on a line instead of the one */
+}
+
+/* styles the h3 text within the class */
+.work-box h3 {
+  position: absolute; /* absolute position to have the label within the image */
+  bottom: 10px; /* bottom position for it to be at the bottom with some small spacing */
+  background-color: darkolivegreen;
+  color: beige;
+  font-size: large; /* the next sizing down from h2 */
+  padding: 15px; /* adds padding around the text */
+}
+
+/* h4 stylizing */
+h4 {
+  font-size: medium; /* the next size down from h3 */
   margin-right: 25px; /* to create spacing from information on the right */
 }
 
@@ -100,6 +153,7 @@ footer {
   background-color: darkolivegreen; /* same background color as header */
   color: beige; /* same text color as header */
   display: flex; /* to create flexbox for the whole footer area */
+  flex-direction: row;
   justify-content: center; /* centering the content within the footer flexbox */
   padding: 20px; /* creating padding around the content area */
 }
@@ -121,4 +175,11 @@ footer a {
   text-decoration: none;
   color: beige;
   font-size: medium; /* same styling as header, but font size is smaller */
+}
+
+/* creates the breakpoint for screen sizes smaller than 768px to make it responsive */
+@media screen and (max-width: 768px) {
+  header, footer, .container {
+    flex-direction: column; /* creates column flex direction for better sizing for smaller screen sizes */
+  }
 }
