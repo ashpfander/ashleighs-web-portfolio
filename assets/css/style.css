@@ -164,7 +164,7 @@ footer a {
   display: flex;
   position: relative; /* relative position so the text within can be positioned to this */
   border: 4px solid var(--darkolive); /* added border to the image */
-  flex: 50%; /* 50% flex so there are two items on a line instead of the one */
+  flex: 49%; /* 50% flex so there are two items on a line instead of the one */
   margin-bottom: 10px;
 }
 
@@ -176,6 +176,12 @@ footer a {
   color: var(--beige);
   font-size: large; /* the next sizing down from h2 */
   padding: 15px; /* adds padding around the text */
+}
+
+/* adds margin between work-box's */
+.mid-margin {
+  margin-right: 10px;
+  border: none;
 }
 
 /* creates the breakpoint for screen sizes smaller than 768px to make it responsive */
