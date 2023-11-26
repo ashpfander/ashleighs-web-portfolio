@@ -3,10 +3,16 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+/* adds variables for reused elements */
+:root {
+  --darkolive: darkolivegreen;
+  --beige: beige;
+}
+
 /* stylized header element */
 header {
-  background-color: darkolivegreen; /* full background color */
-  color: beige; /* lighter font color to see against dark background */
+  background-color: var(--darkolive); /* full background color */
+  color: var(--beige); /* lighter font color to see against dark background */
   padding: 20px; /* to have space around the text */
   display: flex; /* flex so that it's responsive to all display sizes */
   align-items: center; /* align so the items are on the same line */
@@ -27,13 +33,57 @@ ul li {
 /* to make the links not have underlines, be the same color as h1, and a larger size than default */
 header a {
   text-decoration: none;
-  color: beige;
+  color: var(--beige);
   font-size: large;
 }
 
 /* for changing colors when hovering over the links */
 a:hover {
   color: wheat;
+}
+
+/* h4 stylizing */
+h4 {
+  font-size: medium; /* the next size down from h3 */
+  margin-right: 25px; /* to create spacing from information on the right */
+}
+
+/* adding main footer stylizing that matches the header */
+footer {
+  background-color: var(--darkolive); /* same background color as header */
+  color: var(--beige); /* same text color as header */
+  display: flex; /* to create flexbox for the whole footer area */
+  flex-direction: row;
+  justify-content: center; /* centering the content within the footer flexbox */
+  padding: 20px; /* creating padding around the content area */
+}
+
+/* creating a specific class within the footer area */
+/* uses same info as .side-divider class, but updates the color within the footer only */
+footer .side-divider {
+  border-right: 1px solid var(--beige); /* updates color to be beige inside the footer */
+  margin-right: 25px;
+}
+
+/* affects <p> elements only within the footer */
+footer p {
+  margin-right: 25px; /* creates spacing between each other */
+}
+
+/* only affects links within the footer */
+footer a {
+  text-decoration: none;
+  color: var(--beige);
+  font-size: medium; /* same styling as header, but font size is smaller */
+}
+
+/* img id for properties specific to one thing */
+#img-properties {
+  /* sets width and height of image */
+  width: 300px;
+  height: 300px;
+  border-radius: 200px; /* border-radius to make it be a circle shape */
+  margin-right: 25px; /* margin-right to give space between image and text next to it */
 }
 
 /* cover-image class for the main welcoming image */
@@ -64,7 +114,7 @@ a:hover {
 .section-header {
   text-align: end; /* end alignment so text is aligned to the right */
   flex: 20%; /* 20% width so it only takes up part of the page and can be side-by-side with the content class */
-  color: darkolivegreen; /* changes the color of the text */
+  color: var(--darkolive); /* changes the color of the text */
   padding-right: 25px; /* creates padding on the right so it's not touching the content */
   font-size: x-large; /* set to the next largest in sequence from h1 */
 }
@@ -73,15 +123,6 @@ a:hover {
 .side-divider {
   border-right: 1px solid lightslategrey; /* border-right so it's only on one side */
   margin-right: 25px; /* margin so it's not up against the content on the right side */
-}
-
-/* img id for properties specific to one thing */
-#img-properties {
-  /* sets width and height of image */
-  width: 300px;
-  height: 300px;
-  border-radius: 200px; /* border-radius to make it be a circle shape */
-  margin-right: 25px; /* margin-right to give space between image and text next to it */
 }
 
 /* paragraph elements properties within content class */
@@ -94,7 +135,7 @@ a:hover {
 .main-work-box {
   display: flex;
   position: relative; /* relative position so the text within can be positioned to this */
-  border: 4px solid darkolivegreen; /* added border to the image */
+  border: 4px solid var(--darkolive); /* added border to the image */
   flex: 100%; /* 100% flex to fill full area */
   margin-bottom: 10px; /* adds spacing between other images */
 }
@@ -104,8 +145,8 @@ a:hover {
   content: "HORISEON ACCESSIBILITY RECODE"; /* what text I want it to show */
   position: absolute; /* absolute position to have the label within the image */
   bottom: 10px; /* bottom position for it to be at the bottom with some small spacing */
-  background-color: darkolivegreen;
-  color: beige;
+  background-color: var(--darkolive);
+  color: var(--beige);
   font-size: large; /* the next sizing down from h2 */
   font-weight: bold; /* give it a bold weight */
   padding: 15px; /* some padding to have spacing around the text */
@@ -128,7 +169,7 @@ a:hover {
 .work-box {
   display: flex;
   position: relative; /* relative position so the text within can be positioned to this */
-  border: 4px solid darkolivegreen; /* added border to the image */
+  border: 4px solid var(--darkolive); /* added border to the image */
   flex: 50%; /* 50% flex so there are two items on a line instead of the one */
 }
 
@@ -136,45 +177,10 @@ a:hover {
 .work-box h3 {
   position: absolute; /* absolute position to have the label within the image */
   bottom: 10px; /* bottom position for it to be at the bottom with some small spacing */
-  background-color: darkolivegreen;
-  color: beige;
+  background-color: var(--darkolive);
+  color: var(--beige);
   font-size: large; /* the next sizing down from h2 */
   padding: 15px; /* adds padding around the text */
-}
-
-/* h4 stylizing */
-h4 {
-  font-size: medium; /* the next size down from h3 */
-  margin-right: 25px; /* to create spacing from information on the right */
-}
-
-/* adding main footer stylizing that matches the header */
-footer {
-  background-color: darkolivegreen; /* same background color as header */
-  color: beige; /* same text color as header */
-  display: flex; /* to create flexbox for the whole footer area */
-  flex-direction: row;
-  justify-content: center; /* centering the content within the footer flexbox */
-  padding: 20px; /* creating padding around the content area */
-}
-
-/* creating a specific class within the footer area */
-/* uses same info as .side-divider class, but updates the color within the footer only */
-footer .side-divider {
-  border-right: 1px solid beige; /* updates color to be beige inside the footer */
-  margin-right: 25px;
-}
-
-/* affects <p> elements only within the footer */
-footer p {
-  margin-right: 25px; /* creates spacing between each other */
-}
-
-/* only affects links within the footer */
-footer a {
-  text-decoration: none;
-  color: beige;
-  font-size: medium; /* same styling as header, but font size is smaller */
 }
 
 /* creates the breakpoint for screen sizes smaller than 768px to make it responsive */
