@@ -45,7 +45,8 @@ a:hover {
 /* h4 stylizing */
 h4 {
   font-size: medium; /* the next size down from h3 */
-  margin-right: 25px; /* to create spacing from information on the right */
+  margin-right: 25px;
+  margin-left: 25px;
 }
 
 /* adding main footer stylizing that matches the header */
@@ -57,11 +58,6 @@ footer {
   align-items: center;
   justify-content: center; /* centering the content within the footer flexbox */
   padding: 20px; /* creating padding around the content area */
-}
-
-/* affects ul elements only within the footer */
-footer ul {
-  margin-right: 25px; /* creates spacing between each other */
 }
 
 /* only affects links within the footer */
@@ -151,12 +147,14 @@ footer a {
 .work-box img {
   opacity: 0.5; /* to make the image(s) opacity 50% transparent */
   width: 100%; /* fills the entire box area */
+  transition: 0.5s; /* eases back out to half opacity after hovering */
 }
 
 /* img properties within both work classes when hovered over */
 .main-work-box img:hover,
 .work-box img:hover {
   opacity: 1; /* brings it back to the full opacity */
+  transition: 0.5s; /* eases into full opacity upon hovering */
 }
 
 /* uses similar properties as .main-work-box, but half the flex area */
@@ -188,6 +186,11 @@ footer a {
 @media screen and (max-width: 768px) {
   header, footer, .container {
     flex-direction: column; /* creates column flex direction for better sizing for smaller screen sizes */
+  }
+
+  ul li {
+    display: block;
+    text-align: center;
   }
 
   /* added image properties to about me section */
