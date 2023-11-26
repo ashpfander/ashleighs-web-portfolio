@@ -54,19 +54,13 @@ footer {
   color: var(--beige); /* same text color as header */
   display: flex; /* to create flexbox for the whole footer area */
   flex-direction: row;
+  align-items: center;
   justify-content: center; /* centering the content within the footer flexbox */
   padding: 20px; /* creating padding around the content area */
 }
 
-/* creating a specific class within the footer area */
-/* uses same info as .side-divider class, but updates the color within the footer only */
-footer .side-divider {
-  border-right: 1px solid var(--beige); /* updates color to be beige inside the footer */
-  margin-right: 25px;
-}
-
-/* affects <p> elements only within the footer */
-footer p {
+/* affects ul elements only within the footer */
+footer ul {
   margin-right: 25px; /* creates spacing between each other */
 }
 
@@ -80,9 +74,9 @@ footer a {
 /* img id for properties specific to one thing */
 #img-properties {
   /* sets width and height of image */
-  width: 300px;
-  height: 300px;
-  border-radius: 200px; /* border-radius to make it be a circle shape */
+  width: 250px;
+  height: 250px;
+  border-radius: 50%; /* border-radius to make it be a circle shape */
   margin-right: 25px; /* margin-right to give space between image and text next to it */
 }
 
@@ -171,6 +165,7 @@ footer a {
   position: relative; /* relative position so the text within can be positioned to this */
   border: 4px solid var(--darkolive); /* added border to the image */
   flex: 50%; /* 50% flex so there are two items on a line instead of the one */
+  margin-bottom: 10px;
 }
 
 /* styles the h3 text within the class */
@@ -187,5 +182,22 @@ footer a {
 @media screen and (max-width: 768px) {
   header, footer, .container {
     flex-direction: column; /* creates column flex direction for better sizing for smaller screen sizes */
+  }
+
+  /* added image properties to about me section */
+  #img-properties {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 25px;
+  }
+
+  .section-header,
+  .side-divider {
+    margin-bottom: 25px;
+  }
+
+  /* makes the .work-box areas fill 100% rather than 50% */
+  .work-box {
+    flex: 100%;
   }
 }
