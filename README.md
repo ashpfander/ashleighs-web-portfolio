@@ -30,10 +30,10 @@ THEN I am presented with a responsive layout that adapts to my viewport
 
 ## Screenshots of Page
 
-(./assets/images/portfolio-landing-page.png)
-(./assets/images/portfolio-about-me.png)
-(./assets/images/portfolio-work.png)
-(./assets/images/portfolio-work-and-contact.png)
+![screenshot1](./assets/images/portfolio-landing-page.png)
+![screenshot2](./assets/images/portfolio-about-me.png)
+![screenshot3](./assets/images/portfolio-work.png)
+![screenshot4](./assets/images/portfolio-work-and-contact.png)
 
 ## Link to Deployed Application
 
